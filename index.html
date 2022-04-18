@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Title</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="page">
+    <div class="search">
+        <form>
+            <input type="text" name="text" placeholder="Что вы ищете?" class="search__input" onclick="blockHidden()">
+            <input type="button" name="button" value="Найти" class="search__button">
+        </form>
+        <div id="myDropdown" class="dropdown">
+            <a href="#">
+                <div class="ref">
+                    <div class="dropdown__ref">
+                        <div class="dropdown__ref__img"><img src="images/Vector.png" alt="search"/></div>
+                        <div class="dropdown__ref__text">
+                            <p class="dropdown__ref__text_1">CLIMATEGUARD</p>
+                            <p class="dropdown__ref__text_2">Платформа комплексного мониторинга микроклимата помещений</p>
+                            <p class="dropdown__ref__text_3">Экология</p>
+                        </div>
+                        <div class="dropdown__ref__next_1"><img src="images/next.png" alt="next"/></div>
+                    </div>
+                    <div class="dropdown__ref__line"></div>
+                </div>
+            </a>
+            <a href="#">
+                <div class="ref">
+                    <div class="dropdown__ref">
+                        <div class="dropdown__ref__img"><img src="images/Vector.png" alt="search"/></div>
+                        <div class="dropdown__ref__text">
+                            <p class="dropdown__ref__text_1">ARVIZIO</p>
+                            <p class="dropdown__ref__text_2">Платформа для проведения экскурсий, уроков, презентаций с элементами виртуальной реальности</p>
+                            <p class="dropdown__ref__text_3">Образование и кадры</p>
+                        </div>
+                        <div class="dropdown__ref__next_2"><img src="images/next.png" alt="next"/></div>
+                    </div>
+                    <div class="dropdown__ref__line"></div>
+                </div>
+            </a>
+            <a href="#">
+                <div class="ref">
+                    <div class="dropdown__ref">
+                        <div class="dropdown__ref__img"><img src="images/Vector.png" alt="search"/></div>
+                        <div class="dropdown__ref__text">
+                            <p class="dropdown__ref__text_1">UNITBIM</p>
+                            <p class="dropdown__ref__text_2">BIM платформа для проектирования и строительства</p>
+                            <p class="dropdown__ref__text_3">Строительство и капремонт</p>
+                        </div>
+                        <div class="dropdown__ref__next_3"><img src="images/next.png" alt="next"/></div>
+                    </div>
+                    <div class="dropdown__ref__line"></div>
+                </div>
+            </a>
+            <a href="#">
+                <div class="ref">
+                    <div class="dropdown__ref">
+                        <div class="dropdown__ref__img"><img src="images/Vector.png" alt="search"/></div>
+                        <div class="dropdown__ref__text">
+                            <p class="dropdown__ref__text_1">IOT-ПЛАТФОРМА OMNITECH</p>
+                            <p class="dropdown__ref__text_2">Индустриальная Edge IoT платформа</p>
+                            <p class="dropdown__ref__text_3">ЖКХ</p>
+                        </div>
+                        <div class="dropdown__ref__next_4"><img src="images/next.png" alt="next"/></div>
+                    </div>
+                    <div class="dropdown__ref__line"></div>
+                </div>
+            </a>
+            <a href="#">
+                <div class="ref">
+                    <div class="dropdown__ref">
+                        <div class="dropdown__ref__img"><img src="images/Vector.png" alt="search"/></div>
+                        <div class="dropdown__ref__text">
+                            <p class="dropdown__ref__text_1">PIME</p>
+                            <p class="dropdown__ref__text_2">Персональная информационно-управляющая XR-платформа</p>
+                            <p class="dropdown__ref__text_3">Торговля и услуги</p>
+                        </div>
+                        <div class="dropdown__ref__next_5"><img src="images/next.png" alt="next"/></div>
+                    </div>
+                    <div class="dropdown__ref__line"></div>
+                </div>
+            </a>
+            <a href="#">
+                <div class="ref">
+                    <div class="dropdown__ref">
+                        <div class="dropdown__ref__img"><img src="images/Vector.png" alt="search"/></div>
+                        <div class="dropdown__ref__text">
+                            <p class="dropdown__ref__text_1">VIEXPO</p>
+                            <p class="dropdown__ref__text_2">Платформа для проведения интерактивных онлайн мероприятий</p>
+                            <p class="dropdown__ref__text_3">Туризм и отдых | Образование и услуги</p>
+                        </div>
+                        <div class="dropdown__ref__next_6"><img src="images/next.png" alt="next"/></div>
+                    </div>
+                    <div class="dropdown__ref__line"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+    <script>
+        // myDropdown.hidden = true;
+        // function blockHidden(){
+        //     myDropdown.hidden = false;
+        // }
+
+        let hamburger = document.querySelector('.dropdown');
+        let menu = document.querySelector('.page');
+
+        const toggleMenu = () => {
+            menu.classList.toggle('active');
+        }
+
+        hamburger.addEventListener('click', e => {
+            e.stopPropagation();
+
+            toggleMenu();
+        });
+
+        document.addEventListener('click', e => {
+            let target = e.target;
+            let its_menu = target == menu || menu.contains(target);
+            let its_hamburger = target == hamburger;
+            let menu_is_active = menu.classList.contains('active');
+
+            if (!its_menu && !its_hamburger && menu_is_active) {
+                toggleMenu();
+            }
+        })
+    </script>
+</body>
+</html>
